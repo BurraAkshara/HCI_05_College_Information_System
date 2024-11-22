@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HODs and Deans Details</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff; 
+            padding: 20px;
+            transition: background-color 0.3s ease; 
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #003366;
+            font-size: 2.5em;
+        }
+
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 0; 
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .filter-buttons button {
+            width: 50%; 
+            background-color: #003366;
+            color: white;
+            padding: 15px 0;
+            border: none;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .filter-buttons button:hover {
+            background-color: #ff9900;
+        }
+
+       
+        .filter-buttons .active {
+            background-color: #ff9900;
+        }
+
+       
+        .hod-dean-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        
+        .hod-dean-card {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hod-dean-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        
+        .hod-dean-card img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        
+        .hod-dean-card .details {
+            flex: 1;
+        }
+
+        .hod-dean-card h3 {
+            font-size: 1.6em;
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        .hod-dean-card p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .hod-dean-card .designation {
+            font-size: 1.2em;
+            color: #ff9900;
+            margin-bottom: 10px;
+        }
+
+        .hod-dean-card .email {
+            font-size: 1em;
+            color: #003366;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+        }
+        .details img{
+            width:6%;
+            height: 3%;
+        }
+
+        .hod-dean-card .email:hover {
+            text-decoration: underline;
+        }
+
+        
+        footer {
+            background-color: #003366;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Our Esteemed HODs & Deans</h1>
+
+    <div class="filter-buttons">
+        <button id="showHodsButton" onclick="filterBy('hods')">Show HODs</button>
+        <button id="showDeansButton" onclick="filterBy('deans')">Show Deans</button>
+    </div>
+
+    
+    <div class="hod-dean-container" id="hodsContainer" style="display: none;">
+        <div class="hod-dean-card">
+            <img src="https://github.com/Sirichunchu23/photos/blob/main/shashikala.jpg?raw=true" alt="HOD Image">
+            <div class="details">
+                <h3>Dr.Sheshikala Martha</h3>
+                <p>Professor & Head</p>
+                <p class="designation">SCHOOL OF COMPUTER SCIENCE & ENGINEERING</p>
+                <p><b>Email:</b><a href="mailto:m.sheshikala@sru.edu.in">m.sheshikala@sru.edu.in</a></p>
+                <a href="https://www.linkedin.com/mynetwork/grow/"><img src="https://github.com/Sirichunchu23/photos/blob/main/linkedin.jpg?raw=true"></a>
+            </div>
+        </div>
+        <div class="hod-dean-card">
+            <img src="https://github.com/Sirichunchu23/photos/blob/main/sandeep%20battacharya.jpg?raw=true" alt="HOD Image">
+            <div class="details">
+                <h3>Dr.Sandip Bhattacharya</h3>
+                <p>Professor & Head</p> 
+                <p class="designation">SCHOOL OF ELECTRONICS COMMUNICATION & ENGINEEERING</p>
+                <p><B>Email:</B><a href="mailto:sandeep.batacharya@sru.edu.in">sandeep.batacharya@sru.edu.in</a></p>
+                <a href="https://www.linkedin.com/in/dr-sandip-bhattacharya-a223a038/"><img src="https://github.com/Sirichunchu23/photos/blob/main/linkedin.jpg?raw=true"></a>
+            </div>
+        </div>
+         <div class="hod-dean-card">
+            <img src="https://github.com/Sirichunchu23/photos/blob/main/deanhod.jpg?raw=true" alt="HOD Image">
+            <div class="details">
+                <h3>Dr.Mujahid Irfan</h3>
+                <p>Professor & Head</p> 
+                <p class="designation">SCHOOL OF ELECTRICAL AND ELECTRONICS ENGINEEERING</p>
+                <p><B>Email:</B><a href="mailto:mm.irfan@sru.edu.in">mm.irfan@sru.edu.in</a></p>
+                <a href="https://www.linkedin.com/in/dr-md-mujahid-irfan-a736278b/"><img src="https://github.com/Sirichunchu23/photos/blob/main/linkedin.jpg?raw=true"></a>
+            </div>
+        </div>
+         <div class="hod-dean-card">
+            <img src="https://github.com/Sirichunchu23/photos/blob/main/rajyalaxmi.png?raw=true" alt="HOD Image">
+            <div class="details">
+                <h3>Dr. M. Rajya laxmi</h3>
+                <p>Head of the Department</p> 
+                <p class="designation">SCHOOL OF BUSSINESS</p>
+                <p><B>Email:</B><a href="mailto:rajyalaxmi.m@sru.edu.in">rajyalaxmi.m@sru.edu.in</a></p>
+                <a href=""><img src="https://github.com/Sirichunchu23/photos/blob/main/linkedin.jpg?raw=true"></a>
+            </div>
+        </div>
+        <div class="hod-dean-card">
+            <img src="https://github.com/Sirichunchu23/photos/blob/main/pankajkumar.png?raw=true" alt="HOD Image">
+            <div class="details">
+                <h3>Dr. Pankaj Kumar</h3>
+                <p>Professor & Head</p> 
+                <p class="designation">MECHANICAL ENGINEERING</p>
+                <p><B>Email:</B><a href="mailto:pankajkumar@sru.edu.in">pankajkumar@sru.edu.in</a></p>
+                <a href="https://www.linkedin.com/in/dr-pankaj-kumar-/"><img src="https://github.com/Sirichunchu23/photos/blob/main/linkedin.jpg?raw=true"></a>
+            </div>
+        </div>
+        <div class="hod-dean-card">
+            <img src="https://github.com/Sirichunchu23/photos/blob/main/murthi.png?raw=true" alt="HOD Image">
+            <div class="details">
+                <h3>Dr. P. Murthi</h3>
+                <p>Professor & Head</p> 
+                <p class="designation">CIVIL ENGINEERING</p>
+                <p><B>Email:</B><a href="mailto:p.murthi@sru.edu.in">p.murthi@sru.edu.in</a></p>
+                <a href=""><img src="https://github.com/Sirichunchu23/photos/blob/main/linkedin.jpg?raw=true"></a>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="hod-dean-container" id="deansContainer" style="display: none;">
+        <div class="hod-dean-card">
+            <img src="https://github.com/Sirichunchu23/photos/blob/main/indrajeet%20guptha.jpg?raw=true" alt="Dean Image">
+            <div class="details">
+                <h3>Dr.Indrajeet Gupta</h3>
+                <p>Professor & Dean</p>
+                <p class="designation">SCHOOL OF COMPUTER SCIENCE & ENGINEERING</p>
+                <p><b>Email:</b><a href="mailto:indrajeet.gupta@sru.edu.in">indrajeet.gupta@sru.edu.in</a></p>
+                <a href="https://www.linkedin.com/in/indrajeet-gupta-02b96664/"><img src="https://github.com/Sirichunchu23/photos/blob/main/linkedin.jpg?raw=true"></a>
+            </div>
+        </div>
+        <div class="hod-dean-card">
+            <img src="https://github.com/Sirichunchu23/photos/blob/main/Arun%20sekar.jpg?raw=true" alt="Dean Image">
+            <div class="details">
+                <h3>Dr.Arun Sekar</h3>
+                <p>Professor & Dean</p>
+                <p class="designation">SCHOOL OF ELECTRONICS COMMUNICATION & ENGINEEERING</p>
+                <p><B>Email:</B><a href="mailto:arun.sekar@sru.edu.in">arun.sekar@sru.edu.in</a></p>
+                <img src="https://github.com/Sirichunchu23/photos/blob/main/linkedin.jpg?raw=true">
+            </div>
+        </div>
+        <div class="hod-dean-card">
+            <img src="https://github.com/Sirichunchu23/photos/blob/main/deaneee.jpg?raw=true" alt=Dean Image">
+            <div class="details">
+                <h3>Dr. A V V Sudhakar</h3>
+                <p>Professor & Dean</p> 
+                <p class="designation">SCHOOL OF ELECTRICAL AND ELECTRONICS ENGINEEERING</p>
+                <p><B>Email:</B><a href="mailto:avv.sudhakar@sru.edu.in">avv.sudhakar@sru.edu.in</a></p>
+                <a href="https://scholar.google.com/citations?user=xhuJ75EAAAAJ&hl=en"><img src="https://github.com/Sirichunchu23/photos/blob/main/linkedin.jpg?raw=true"></a>
+            </div>
+        </div>
+         <div class="hod-dean-card">
+            <img src="https://github.com/Sirichunchu23/photos/blob/main/sumannaredla.png?raw=true" alt="Dean Image">
+            <div class="details">
+                <h3>Dr.Suman Naredla</h3>
+                <p>Professor & Dean</p> 
+                <p class="designation">SCHOOL OF BUSSINESS</p>
+                <p><B>Email:</B><a href="mailto:sumankumar.n@sru.edu.in">sumankumar.n@sru.edu.in</a></p>
+                <a href="https://www.linkedin.com/in/suman-naredla-16274324/"><img src="https://github.com/Sirichunchu23/photos/blob/main/linkedin.jpg?raw=true"></a>
+
+            </div>
+        </div>
+        <div class="hod-dean-card">
+            <img src="https://github.com/Sirichunchu23/photos/blob/main/subbarao.png?raw=true" alt="Dean Image">
+            <div class="details">
+                <h3>Dr. Subbarao Medabalimi</h3>
+                <p>Assistant Professor and Associate Head</p> 
+                <p class="designation">MECHANICAL ENGINEERING</p>
+                <p><B>Email:</B><a href="mailto:m.subbarao@sru.edu.in">m.subbarao@sru.edu.in</a></p>
+                <a href="https://www.linkedin.com/in/dr-subba-rao-medabalimi-429972128/"><img src="https://github.com/Sirichunchu23/photos/blob/main/linkedin.jpg?raw=true"></a>
+
+            </div>
+        </div>
+        <div class="hod-dean-card">
+            <img src="https://github.com/Sirichunchu23/photos/blob/main/poongodi.png?raw=true" alt="Dean Image">
+            <div class="details">
+                <h3>Dr. K. Poongodi</h3>
+                <p>Professor and Associate HoD</p> 
+                <p class="designation">CIVIL ENGINEERING</p>
+                <p><B>Email:</B><a href="mailto:k.poongodi@sru.edu.in">k.poongodi@sru.edu.in</a></p>
+                <a href=""><img src="https://github.com/Sirichunchu23/photos/blob/main/linkedin.jpg?raw=true"></a>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterBy(type) {
+            var hodsContainer = document.getElementById('hodsContainer');
+            var deansContainer = document.getElementById('deansContainer');
+            var showHodsButton = document.getElementById('showHodsButton');
+            var showDeansButton = document.getElementById('showDeansButton');
+            
+            
+            showHodsButton.classList.remove('active');
+            showDeansButton.classList.remove('active');
+            
+            
+            hodsContainer.style.display = 'none';
+            deansContainer.style.display = 'none';
+            
+            
+            if (type === 'hods') {
+                hodsContainer.style.display = 'flex';
+                document.body.style.backgroundColor = '#f4f4f4'; 
+                showHodsButton.classList.add('active');
+            } else if (type === 'deans') {
+                deansContainer.style.display = 'flex';
+                document.body.style.backgroundColor = '#f4f4f4';  
+                showDeansButton.classList.add('active');
+            }
+        }
+
+        
+        window.onload = function() {
+            document.body.style.backgroundColor = '#fff';  
+            document.getElementById('hodsContainer').style.display = 'none';  
+            document.getElementById('deansContainer').style.display = 'none'; 
+        };
+    </script>
+
+</body>
+</html>
